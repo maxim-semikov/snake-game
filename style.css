@@ -1,0 +1,18 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: darkseagreen;
+    margin: 0;
+}
+
+h1 {
+    color: green;
+}
+
+#gameCanvas {
+    background-color: #fff;
+    border: 2px solid black;
+}
