@@ -1,5 +1,6 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
+const gameOverContainer = document.getElementById('gameOver');
 
 const snakeSize = 20;
 const w = 400;
@@ -10,7 +11,9 @@ let food;
 let gameInterval;
 
 function init() {
+    gameOverContainer.style.display = "none";
     snake = [];
+    score = 0;
     for (let i = 4; i >= 0; i--) {
         snake.push({x: i, y: 0});
     }
@@ -110,8 +113,9 @@ function keyDownEvent(e) {
 }
 
 function stopGame() {
-    clearInterval(gameInterval);  // Останавливаем игровой цикл
-    alert('Game over! Score: ' + score);
+    clearInterval(gameInterval);
+    document.getElementById("finalScore").innerText = `${score}`;
+    gameOverContainer.style.display = "block";
 }
 
 init();
